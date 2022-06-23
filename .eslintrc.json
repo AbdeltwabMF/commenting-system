@@ -1,5 +1,18 @@
 {
+  "root": true,
   "extends": [
-    "next/core-web-vitals"
-  ]
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "comma-style": ["error", "last"],
+    "comma-dangle": ["error", "never"],
+    "jsx-quotes": ["error", "prefer-single"]
+  }
 }
