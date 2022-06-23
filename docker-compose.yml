@@ -5,7 +5,7 @@ services:
     image: postgres:alpine
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: db5432postgres
+      POSTGRES_PASSWORD: db5432
       POSTGRES_DB: csdb
     volumes:
       - ./db/pgdata:/var/lib/postgresql/data
@@ -26,6 +26,8 @@ services:
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: abdeltwab.m.fakhry@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: db5432postgres
+      PGADMIN_DEFAULT_PASSWORD: db5432
     ports:
       - 8080:80
+    depends_on:
+      - db
