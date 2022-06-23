@@ -4,10 +4,10 @@ const Home: NextPage = () => {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen py-2'>
       <div className='flex flex-col items-center justify-center flex-1 w-full px-20 text-center'>
-        <h1 className='text-6xl font-bold'>
+        <h1 className='text-5xl font-bold'>
           Welcome to{' '}
           <a className='text-blue-600' href='https://nextjs.org'>
-            Next.js!
+            Docker, once again!
           </a>
         </h1>
 
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <div className='flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full'>
           <a
             href='https://nextjs.org/docs'
-            className='p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600'
+            className='p-6 mt-6 text-left border max-w-sm rounded-xl hover:text-blue-600 focus:text-blue-600'
           >
             <h3 className='text-2xl font-bold'>Documentation &rarr;</h3>
             <p className='mt-4 text-xl'>
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
 
           <a
             href='https://nextjs.org/learn'
-            className='p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600'
+            className='p-6 mt-6 text-left border max-w-sm rounded-xl hover:text-blue-600 focus:text-blue-600'
           >
             <h3 className='text-2xl font-bold'>Learn &rarr;</h3>
             <p className='mt-4 text-xl'>
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
 
           <a
             href='https://github.com/vercel/next.js/tree/canary/examples'
-            className='p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600'
+            className='p-6 mt-6 text-left border max-w-sm rounded-xl hover:text-blue-600 focus:text-blue-600'
           >
             <h3 className='text-2xl font-bold'>Examples &rarr;</h3>
             <p className='mt-4 text-xl'>
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
 
           <a
             href='https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            className='p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600'
+            className='p-6 mt-6 text-left border max-w-sm rounded-xl hover:text-blue-600 focus:text-blue-600'
           >
             <h3 className='text-2xl font-bold'>Deploy &rarr;</h3>
             <p className='mt-4 text-xl'>

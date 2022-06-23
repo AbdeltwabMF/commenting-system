@@ -1,0 +1,12 @@
+.git
+.gitignore
+.next
+
+node_modules
+README.md
+
+components
+public
+styles
+pages
+db

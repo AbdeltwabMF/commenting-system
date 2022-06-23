@@ -1,0 +1,31 @@
+---
+version: "3"
+services:
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: amf
+      POSTGRES_PASSWORD: db5432postgres
+      POSTGRES_DB: csdb
+    volumes:
+      - ./db/pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  web:
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - ./pages:/app/pages
+      - ./components:/app/components
+      - ./styles:/app/styles
+      - ./public:/app/public
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: abdeltwab.m.fakhry@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: db5432postgres
+    ports:
+      - 8080:80
