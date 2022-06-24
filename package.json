@@ -4,7 +4,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "standard --fix && next lint"
+    "lint": "standard --fix && next lint",
+    "knex:migrate:make": "knex migrate:make --knexfile ./db/knexfile.ts",
+    "knex:migrate:latest": "knex migrate:latest --knexfile ./db/knexfile.ts",
+    "knex:seed:make": "knex seed:make --knexfile ./db/knexfile.ts",
+    "knex:seed:run": "knex seed:run --knexfile ./db/knexfile.ts"
   },
   "dependencies": {
     "knex": "^2.1.0",
