@@ -1,12 +1,18 @@
+components
+lib
+pages
+types
+database
+styles
+public
+
+
 .git
 .gitignore
 .next
+.vercel
+
 
 node_modules
+LICENSE
 README.md
-
-components
-public
-styles
-pages
-db

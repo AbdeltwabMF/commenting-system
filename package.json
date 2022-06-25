@@ -5,12 +5,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "standard --fix && next lint",
-    "knex:migrate:make": "knex migrate:make --knexfile ./db/knexfile.ts",
-    "knex:migrate:latest": "knex migrate:latest --knexfile ./db/knexfile.ts",
-    "knex:seed:make": "knex seed:make --knexfile ./db/knexfile.ts",
-    "knex:seed:run": "knex seed:run --knexfile ./db/knexfile.ts"
+    "knex:migrate:make": "knex migrate:make --knexfile ./database/knexfile.ts",
+    "knex:migrate:latest": "knex migrate:latest --knexfile ./database/knexfile.ts",
+    "knex:seed:make": "knex seed:make --knexfile ./database/knexfile.ts",
+    "knex:seed:run": "knex seed:run --knexfile ./database/knexfile.ts"
   },
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "knex": "^2.1.0",
     "next": "latest",
     "pg": "^8.7.3",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "autoprefixer": "^10.4.7",

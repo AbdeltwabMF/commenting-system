@@ -4,7 +4,7 @@ interface IKnexConfig {
   [key: string]: Knex.Config;
 }
 
-const config: IKnexConfig = {
+const knexConfig: IKnexConfig = {
   development: {
     client: 'postgresql',
     connection: {
@@ -22,9 +22,10 @@ const config: IKnexConfig = {
       extension: 'ts'
     },
     seeds: {
-      directory: './seeds'
+      directory: './seeds',
+      extension: 'ts'
     }
   }
 }
 
-export default config
+export default knexConfig

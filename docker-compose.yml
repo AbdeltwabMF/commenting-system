@@ -1,14 +1,14 @@
 ---
 version: "3"
 services:
-  db:
+  postgres:
     image: postgres:alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: db5432
       POSTGRES_DB: csdb
     volumes:
-      - ./db/pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data
     ports:
       - 5432:5432
     restart: always
@@ -17,12 +17,15 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - db
+      - postgres
     volumes:
       - ./pages:/app/pages
       - ./components:/app/components
       - ./styles:/app/styles
       - ./public:/app/public
+      - ./lib:/app/lib
+      - ./types:/app/types
+      - ./database:/app/database
   pgadmin:
     image: dpage/pgadmin4
     environment:
@@ -32,8 +35,5 @@ services:
     ports:
       - 5050:80
     depends_on:
-      - db
+      - postgres
     restart: always
-
-volumes:
-  postgres: {}
