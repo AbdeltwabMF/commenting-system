@@ -9,8 +9,8 @@
     "knex:migrate:latest": "knex migrate:latest --knexfile ./database/knexfile.ts",
     "knex:seed:make": "knex seed:make --knexfile ./database/knexfile.ts",
     "knex:seed:run": "knex seed:run --knexfile ./database/knexfile.ts",
-    "test": "./scripts/test.sh drop cstestdb && ./scripts/test.sh create cstestdb && NODE_ENV=test jest --detectOpenHandles",
-    "test2": "jest"
+    "test": "jest --detectOpenHandles",
+    "test2": "./scripts/test.sh drop cstestdb && ./scripts/test.sh create cstestdb && NODE_ENV=test jest --detectOpenHandles"
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",

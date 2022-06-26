@@ -5,13 +5,14 @@ types
 database
 styles
 public
-
+controllers
+scripts
+__tests__
 
 .git
 .gitignore
 .next
 .vercel
-
 
 node_modules
 LICENSE

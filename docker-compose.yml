@@ -26,6 +26,9 @@ services:
       - ./lib:/app/lib
       - ./types:/app/types
       - ./database:/app/database
+      - ./controllers:/app/controllers
+      - ./scripts:/app/scripts
+      - ./__tests__:/app/__tests__
   pgadmin:
     image: dpage/pgadmin4
     environment:

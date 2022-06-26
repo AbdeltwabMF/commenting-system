@@ -1,12 +1,11 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import knex from '../../../database/knexcon'
+import { getComments } from '../../../controllers/CommentController'
 import Comment from '../../../types/comment'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Comment>
+  res: NextApiResponse
 ) {
-  const comments = await knex('comment').select('*')
-  console.log(comments)
-  res.status(200).json(comments[0])
+  const comments = await getComments()
+  res.status(200).json(comments)
 }
