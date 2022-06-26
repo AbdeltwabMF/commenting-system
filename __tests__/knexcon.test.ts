@@ -1,5 +1,5 @@
-import knex from '../database/knexcon'
 import Comment from '../types/comment'
+import knex from '../database/knexcon'
 
 const data: Comment[] = [
   {
@@ -19,13 +19,31 @@ const data: Comment[] = [
 ]
 
 describe('Test database queries', () => {
+  // beforeAll(async () => {
+  //   knex.migrate
+  //     .latest({
+  //       directory: './database/migrations',
+  //       extension: 'ts'
+  //     })
+  //     .then(function () {
+  //       return knex.seed.run({
+  //         directory: './database/seeds',
+  //         extension: 'ts'
+  //       })
+  //     })
+  // })
+
   it('should get all comments for knex.select *', () => {
     knex
       .select('*')
       .from<Comment>('comment')
       .then((comments) => {
-        console.log(comments)
-        expect(comments).toHaveLength(3)
+        for (const comment of comments) {
+          expect(comment).toHaveProperty('comment_id')
+        }
+      })
+      .finally(() => {
+        knex.destroy()
       })
   })
 
@@ -38,9 +56,11 @@ describe('Test database queries', () => {
           .select('*')
           .from<Comment>('comment')
           .then((comments) => {
-            console.log(comments)
             expect(comments).toHaveLength(5)
           })
+      })
+      .finally(() => {
+        knex.destroy()
       })
   })
 
@@ -50,8 +70,10 @@ describe('Test database queries', () => {
       .from<Comment>('comment')
       .where('comment_id', 1)
       .then((comment) => {
-        console.log(comment)
         expect(comment).toHaveLength(1)
+      })
+      .finally(() => {
+        knex.destroy()
       })
   })
 
@@ -67,13 +89,15 @@ describe('Test database queries', () => {
           .select('*')
           .from<Comment>('comment')
           .then((comments) => {
-            console.log('after updated:', comments)
             expect(comments).toHaveLength(5)
           })
       })
+      .finally(() => {
+        knex.destroy()
+      })
   })
 
-  it('should delete the comment with id = 6, 7 for knex.delete', () => {
+  it('should delete the comment with id = 6, 8 for knex.delete', () => {
     knex
       .delete()
       .from<Comment>('comment')
@@ -83,9 +107,11 @@ describe('Test database queries', () => {
           .select('*')
           .from<Comment>('comment')
           .then((comments) => {
-            console.log(comments)
             expect(comments).toHaveLength(3)
           })
+      })
+      .finally(() => {
+        knex.destroy()
       })
   })
 })

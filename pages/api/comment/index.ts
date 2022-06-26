@@ -4,9 +4,9 @@ import Comment from '../../../types/comment'
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Comment>
 ) {
-  const comment = await knex('comment').select('*').where('id', req.query.id)
-  console.log(comment)
-  res.status(200).json(comment)
+  const comments = await knex('comment').select('*')
+  console.log(comments)
+  res.status(200).json(comments[0])
 }

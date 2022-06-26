@@ -9,7 +9,8 @@
     "knex:migrate:latest": "knex migrate:latest --knexfile ./database/knexfile.ts",
     "knex:seed:make": "knex seed:make --knexfile ./database/knexfile.ts",
     "knex:seed:run": "knex seed:run --knexfile ./database/knexfile.ts",
-    "test": "jest --detectOpenHandles"
+    "test": "./scripts/test.sh drop cstestdb && ./scripts/test.sh create cstestdb && NODE_ENV=test jest --detectOpenHandles",
+    "test2": "jest"
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
@@ -24,6 +25,7 @@
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "autoprefixer": "^10.4.7",
@@ -32,6 +34,7 @@
     "eslint-config-next": "12.1.6",
     "jest": "^28.1.1",
     "postcss": "^8.4.14",
+    "supertest": "^6.2.3",
     "tailwindcss": "^3.1.4",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.2"
